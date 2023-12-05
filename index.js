@@ -2,6 +2,9 @@ const modal = document.getElementById('modal');
 const modalCloseBtn = document.getElementById('modal-close-btn');
 const consentForm = document.getElementById('consent-form');
 const modalText = document.getElementById('modal-text');
+const declineBtn = document.getElementById('decline-btn');
+const buttonContainer = document.getElementById('modal-choice-btns');
+const acceptBtn = document.getElementById('accept-btn');
 
 
 
@@ -51,7 +54,14 @@ consentForm.addEventListener('submit', (event) => {
             <img src="images/pirate.gif">
         </div>
         ` ;
+        modalCloseBtn.disabled = false;
+        modalCloseBtn.style.display = 'cursor-pointer'
     }, 3000);
 
 });
+
+declineBtn.addEventListener('mouseenter', () => {
+    buttonContainer.classList.toggle('reverse-btns')
+});
+
 
